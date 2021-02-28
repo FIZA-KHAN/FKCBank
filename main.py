@@ -26,29 +26,23 @@ class Transaction(db.Model):
     amount = db.Column(db.Integer, nullable=False)
     date = db.Column(db.String(12))
 
-#def __init__(self, fname, lname, email, phone, current_balance, gender, city):
-    #self.fname = fname
-    #self.lname = lname
-    #self.email = email
-    #self.phone = phone
-    #self.current_balance = current_balance
-    #self.gender = gender
-    #self.city = city
-
 @app.route('/')
 def home():
     return(render_template('index.html'))
 
+#displayng customers
 @app.route('/customers', methods = ['GET', 'POST'])
 def customers():
     data = Customers.query.all()  
     return(render_template('customer.html', customers = data))
 
+#viewing a particula customer
 @app.route('/view/<string:customer_id>', methods = ['GET', 'POST'])
 def view(customer_id):
     data = Customers.query.filter_by(customer_id = customer_id).first()
     return(render_template('view.html', data = data))
 
+#transfering money
 @app.route('/transfer', methods = ['GET', 'POST'])
 def transfer():
     data = Customers.query.all()  
@@ -72,6 +66,7 @@ def transfer():
                 return(redirect(url_for('transhist'))) #result=result 
     return(render_template('transfer.html', data = data))
 
+#viewing transaction history
 @app.route('/transhist', methods = ['GET', 'POST'])
 def transhist():
     result = Transaction.query.all()  
