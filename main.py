@@ -36,7 +36,7 @@ def customers():
     data = Customers.query.all()  
     return(render_template('customer.html', customers = data))
 
-#viewing a particula customer
+#viewing a particular customer
 @app.route('/view/<string:customer_id>', methods = ['GET', 'POST'])
 def view(customer_id):
     data = Customers.query.filter_by(customer_id = customer_id).first()
