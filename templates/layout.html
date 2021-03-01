@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>FKC Bank</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="/static/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="{{ url_for('static', filename = 'vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+        type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename = 'css/clean-blog.min.css') }}" rel="stylesheet">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <!-- <img src="/static/logo.png" alt="" width="30" height="24" style="margin-top: 4px;"
+                    class="d-inline-block align-top"> -->
+                FKC Bank
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item {{ 'active' if active_page == 'menu1' else '' }}">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item {{ 'active' if active_page == 'menu2' else '' }}">
+                        <a class="nav-link" aria-current="page" href="/customers">Customers</a>
+                    </li>
+                    <li class="nav-item {{ 'active' if active_page == 'menu3' else '' }}">
+                        <a class="nav-link" href="/transfer">Money Transfer</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="margin-top: 6px;">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/KFCBank" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://facebook.com/KFCBank" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- <li class="list-inline-item">
+                            <a href="https://github.com/KFCBank" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; KFC Bank 2020</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename = 'vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static', filename = 'js/clean-blog.min.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
